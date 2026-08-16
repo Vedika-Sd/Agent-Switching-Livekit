@@ -1,12 +1,8 @@
 """
 SIMPLE AGENT SWITCHING DEMO — LiveKit Agents
-==============================================
 Two agents:
   1. ReceptionistAgent — greets caller, answers basic FAQs, listens for booking intent
   2. BookingAgent       — takes over once caller wants to book, collects details, "confirms" a booking
-
-Run locally with:
-    python simple_agent_switching.py console
 """
 
 import random
@@ -118,8 +114,8 @@ spoken language, no lists or markdown."""
             time: booking time, e.g. "18:00"
             station_type: PC, PS5, Xbox, VR, or Racing Simulator
         """
-        # Simulated check — in a real system this would call your backend.
-        is_available = random.choice([True, True, True, False])  # mostly available
+        # Simulated check
+        is_available = random.choice([True, True, True, False]) 
         if is_available:
             return f"{station_type} is available on {date} at {time}."
         return f"{station_type} is fully booked on {date} at {time}. Suggest a different time or station."
@@ -143,8 +139,7 @@ spoken language, no lists or markdown."""
             station_type: PC, PS5, Xbox, VR, or Racing Simulator
             number_of_players: how many players
         """
-        # Simulated booking — generates a fake confirmation code instead of
-        # hitting a real database/API.
+        # Simulated booking
         code = "".join(random.choices(string.ascii_uppercase + string.digits, k=6))
         return (
             f"Booking confirmed for {player_name}, {number_of_players} player(s), "
@@ -170,7 +165,7 @@ async def entrypoint(ctx: JobContext):
     )
 
     await session.start(
-        agent=ReceptionistAgent(),  # call always starts here
+        agent=ReceptionistAgent(), 
         room=ctx.room,
     )
 
