@@ -1,0 +1,485 @@
+Agents   Starting console mode 🚀
+
+    23:18:47.531 DEBUG    asyncio            Using proactor: IocpProactor  
+    23:18:47.578 DEBUG    livekit.agents     no system trust store found, setting SSL_CERT_FILE to the certifi bundle  
+    23:18:47.581 INFO     livekit.agents     starting worker {"version": "1.6.10", "rtc-version": "1.1.14"}
+    23:18:47.613 INFO     livekit.agents     HTTP server listening on :62985  
+    23:18:47.838 WARNING  livekit.agents     no warmed process available for job, waiting for one to be created  
+                                         {"job_id": "mock-job-c7254c1498bc"}
+    23:18:47.900 INFO     livekit.agents     initializing job runner {"tid": 9492}
+    23:18:47.907 INFO     livekit.agents     job runner initialized {"tid": 9492, "elapsed_time": 0.0}
+    23:18:47.911 DEBUG    asyncio            Using proactor: IocpProactor  
+    23:18:55.408 INFO     livekit.agents     adaptive interruption detector initialized  
+                                         {"base_url": "https://agent-gateway.livekit.cloud/v1", "detection_interval": 0.1, 
+"audio_prefix_duration": 1.0, "max_audio_duration": 3, "min_frames": 2, "threshold": null, "inference_timeout": 0.7}
+    23:18:55.475 DEBUG    livekit.agents     http_session(): creating a new httpclient ctx  
+    23:18:55.671 DEBUG    livekit.agents     using audio io: `Console` -> `AgentSession` -> `TranscriptSynchronizer` -> `AudioSinkProxy`   
+                                             -> `Console`                                                                                  
+    23:18:55.676 DEBUG    livekit.agents     using transcript io: `AgentSession` -> `TranscriptSynchronizer`  
+    23:18:57.968 DEBUG    livekit.agents     audio turn detector initialized  
+                                         {"model": "turn-detector-v1", "thresholds": {"nl": 0.75, "ar": 0.355, "tr": 0.65, "id": 0.47, 
+"es": 0.59, "hi": 0.575, "pt": 0.665, "ko": 0.695, "en": 0.56, "zh": 0.59, "ja": 0.37, "de": 0.495, "fr": 0.575, "it": 0.64}, 
+"default_threshold": 0.56, "overrides": null}
+    23:18:57.977 DEBUG    livekit.agents     adaptive interruption session created  
+                                         {"default_threshold": 0.656, "effective_threshold": 0.656, "user_override": false}
+    23:18:58.936 WARNING  livekit.agents     inference is slower than realtime {"delay": 0.18618989999883342}
+    23:19:00.214 DEBUG    livekit.agents     aec warmup active, disabling interruptions for 3.00s  
+    23:19:03.203 DEBUG    livekit.agents     aec warmup expired, re-enabling interruptions  
+    23:19:06.814 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "Hello! Welcome to the gaming zone. I can answer any questions you 
+have or help you book a session. What can I do for you today?"}
+    23:19:09.377 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Four", "language": "en-IN", "transcript_delay": 0.07246136665344238}
+    23:19:11.879 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.7775709629058838, "unlikely_threshold": 0.56, "endpointing_delay": 0.3, 
+"language": "en-IN", "trigger": "vad", "from_cache": false}
+    23:19:11.899 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902551.3548982, "last_final_transcript_time": 1786902549.3871772, 
+"speech_start_time": 1786902548.6408412, "delay_completed": false, "source": "vad", "end_of_turn_probability": 0.7775709629058838, 
+"unlikely_threshold": 0.56}
+    23:19:11.916 DEBUG    livekit.agents     using preemptive generation {"preemptive_lead_time": 2.5293149948120117}
+    23:19:11.937 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "types of games are available there?", "language": "en-IN"}
+    23:19:11.951 WARNING  livekit.agents     transcript arrives after turn has been committed. consider raising `min_delay` in the         
+                                             endpointing options to accommodate a slow stt. subsequent occurrences will log at debug       
+                                             level.                                                                                        
+    23:19:11.957 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": null, "unlikely_threshold": null, "endpointing_delay": 0.3, "language": "en-IN", 
+"trigger": "stt", "from_cache": false}
+    23:19:11.971 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "Four"}
+    23:19:12.250 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902551.9374223, "last_final_transcript_time": 1786902551.9481058, 
+"speech_start_time": null, "delay_completed": true, "source": "stt", "end_of_turn_probability": null, "unlikely_threshold": null}
+    23:19:12.272 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "types of games are available there?"}
+    23:19:18.815 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "We have PC, PS5, Xbox, VR, and Racing Simulator stations available 
+for you to use."}
+    23:19:23.887 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Can you extend a bit more?", "language": "en-IN", "transcript_delay": 
+0.6367161273956299}
+    23:19:23.906 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.3485310971736908, "unlikely_threshold": 0.56, "endpointing_delay": 2.5, 
+"language": "en-IN", "trigger": "stt", "from_cache": true}
+    23:19:25.754 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902563.2506542, "last_final_transcript_time": 1786902563.8950918, 
+"speech_start_time": 1786902561.6453302, "delay_completed": true, "source": "stt", "end_of_turn_probability": 0.3485310971736908, 
+"unlikely_threshold": 0.56}
+    23:19:25.764 DEBUG    livekit.agents     using preemptive generation {"preemptive_lead_time": 1.8692591190338135}
+    23:19:25.770 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "Can you extend a bit more?"}
+    23:19:34.716 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "We offer a wide variety of gaming setups including high end PCs andthe latest consoles. Whether you want to dive into VR or hit the tracks on our racing simulator, we have it all."}
+    23:19:37.562 DEBUG    livekit.agents     received user transcript {"user_transcript": "Everything's", "language": "en-IN"}
+    23:19:37.569 DEBUG    livekit.agents     stt transcript arrived after a turn flush, skipping eot prediction  
+    23:19:37.575 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": null, "unlikely_threshold": null, "endpointing_delay": 0.3, "language": "en-IN", 
+"trigger": "stt", "from_cache": false}
+    23:19:39.500 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.7797820568084717, "unlikely_threshold": 0.56, "endpointing_delay": 0.3, 
+"language": "en-IN", "trigger": "vad", "from_cache": false}
+    23:19:39.508 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902578.6547556, "last_final_transcript_time": 1786902577.567515, 
+"speech_start_time": 1786902577.5695324, "delay_completed": false, "source": "vad", "end_of_turn_probability": 0.7797820568084717, 
+"unlikely_threshold": 0.56}
+    23:19:39.524 DEBUG    livekit.agents     using preemptive generation {"preemptive_lead_time": 1.9571433067321777}
+    23:19:39.557 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "Everything's"}
+    23:19:40.858 DEBUG    livekit.agents     flush audio emitter due to slow audio generation  
+    23:19:44.813 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "I'm sorry, I didn't quite catch that. Is there anything else you'd 
+like to know about our stations or pricing?"}
+    23:19:52.935 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Prices.", "language": "en-IN", "transcript_delay": 0.49064135551452637}
+    23:19:52.962 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.3163127601146698, "unlikely_threshold": 0.56, "endpointing_delay": 2.5, 
+"language": "en-IN", "trigger": "stt", "from_cache": false}
+    23:19:54.949 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902592.4448645, "last_final_transcript_time": 1786902592.9439647, 
+"speech_start_time": 1786902587.5320387, "delay_completed": true, "source": "stt", "end_of_turn_probability": 0.3163127601146698, 
+"unlikely_threshold": 0.56}
+    23:19:54.960 DEBUG    livekit.agents     using preemptive generation {"preemptive_lead_time": 2.015347480773926}
+    23:19:54.970 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "Prices."}
+    23:19:58.312 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "Our rates are 200 rupees per hour per station."}
+    23:20:02.252 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Oh, okay.", "language": "en-IN", "transcript_delay": 0.02111983299255371}
+    23:20:04.734 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "What is limit?", "language": "en-IN", "transcript_delay": 0.6848061084747314}
+    23:20:04.803 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "For", "language": "en-IN", "transcript_delay": 0.7539927959442139}
+    23:20:04.850 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "this?", "language": "en-IN", "transcript_delay": 0.8008241653442383}
+    23:20:04.864 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.3158112168312073, "unlikely_threshold": 0.56, "endpointing_delay": 2.5, 
+"language": "en-IN", "trigger": "stt", "from_cache": true}
+    23:20:06.566 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902604.0497768, "last_final_transcript_time": 1786902604.8617296, 
+"speech_start_time": 1786902601.2521846, "delay_completed": true, "source": "stt", "end_of_turn_probability": 0.3158112168312073, 
+"unlikely_threshold": 0.56}
+    23:20:06.595 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "Oh, okay. What is limit? For this?"}
+    23:20:16.013 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "There is no limit on how many hours you can play. You can stay as 
+long as you like until we close at 11 PM."}
+    23:20:20.009 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "I want to book", "language": "en-IN", "transcript_delay": 
+0.002000570297241211}
+    23:20:20.862 WARNING  livekit.agents     turn detection transport latency is too high: 524ms  
+    23:20:20.870 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.49896976351737976, "unlikely_threshold": 0.56, "endpointing_delay": 2.5, 
+"language": "en-IN", "trigger": "vad", "from_cache": false}
+    23:20:20.883 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "a slot.", "language": "en-IN", "transcript_delay": 0.8002743721008301}
+    23:20:20.918 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.49896976351737976, "unlikely_threshold": 0.56, "endpointing_delay": 2.5, 
+"language": "en-IN", "trigger": "stt", "from_cache": true}
+    23:20:22.633 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902620.0832236, "last_final_transcript_time": 1786902620.8993137, 
+"speech_start_time": 1786902618.8553894, "delay_completed": true, "source": "stt", "end_of_turn_probability": 0.49896976351737976, 
+"unlikely_threshold": 0.56}
+    23:20:22.702 DEBUG    livekit.agents     using preemptive generation {"preemptive_lead_time": 1.8031818866729736}
+    23:20:22.751 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "I want to book a slot."}
+    23:20:22.766 DEBUG    livekit.agents     executing tool  
+                                         {"function": "transfer_to_booking", "arguments": "{}", "speech_id": "speech_404152b18a6a"}
+    23:20:22.782 DEBUG    livekit.agents     tools execution completed {"speech_id": "speech_404152b18a6a"}
+    23:20:22.789 INFO     livekit.agents     adaptive interruption detector initialized  
+                                         {"base_url": "https://agent-gateway.livekit.cloud/v1", "detection_interval": 0.1, 
+"audio_prefix_duration": 1.0, "max_audio_duration": 3, "min_frames": 2, "threshold": null, "inference_timeout": 0.7}
+    23:20:22.864 DEBUG    livekit.agents     reusing STT pipeline from previous activity  
+    23:20:22.868 DEBUG    livekit.agents     reusing turn detector stream from previous activity  
+    23:20:23.667 DEBUG    livekit.agents     adaptive interruption session created  
+                                         {"default_threshold": 0.656, "effective_threshold": 0.656, "user_override": false}
+    23:20:24.222 DEBUG    livekit.agents     flush audio emitter due to slow audio generation  
+    23:20:27.689 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "Sure thing, I can help you with that. May I have your full name 
+first?"}
+    23:20:30.249 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "A mid", "language": "en-IN", "transcript_delay": 0.03700423240661621}
+    23:20:30.751 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "cast.", "language": "en-IN", "transcript_delay": 0.04416322708129883}
+    23:20:31.563 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.7589740753173828, "unlikely_threshold": 0.56, "endpointing_delay": 0.3, 
+"language": "en-IN", "trigger": "vad", "from_cache": false}
+    23:20:31.574 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902631.1523223, "last_final_transcript_time": 1786902630.759868, 
+"speech_start_time": 1786902629.345582, "delay_completed": false, "source": "vad", "end_of_turn_probability": 0.7589740753173828, 
+"unlikely_threshold": 0.56}
+    23:20:31.590 DEBUG    livekit.agents     using preemptive generation {"preemptive_lead_time": 0.8297615051269531}
+    23:20:31.597 DEBUG    livekit.agents     received user transcript {"user_transcript": "Sabin.", "language": "en-IN"}
+    23:20:31.610 WARNING  livekit.agents     transcript arrives after turn has been committed. consider raising `min_delay` in the         
+                                             endpointing options to accommodate a slow stt. subsequent occurrences will log at debug       
+                                             level.                                                                                        
+    23:20:31.618 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": null, "unlikely_threshold": null, "endpointing_delay": 0.3, "language": "en-IN", 
+"trigger": "stt", "from_cache": false}
+    23:20:31.653 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "A mid cast."}
+    23:20:31.895 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902631.5976348, "last_final_transcript_time": 1786902631.6035995, 
+"speech_start_time": null, "delay_completed": true, "source": "stt", "end_of_turn_probability": null, "unlikely_threshold": null}
+    23:20:31.918 WARNING  livekit.agents     preemptive generation invalidated after `on_user_turn_completed` because the transcript,      
+                                             chat context, tools, or tool choice changed                                                   
+    23:20:31.950 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "Sabin."}
+    23:20:36.815 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "Thanks, Sabin. What date and time were you looking to come in?"}
+    23:20:41.455 DEBUG    livekit.agents     received user transcript {"user_transcript": "More.", "language": "en-IN"}
+    23:20:41.461 DEBUG    livekit.agents     stt transcript arrived after a turn flush, skipping eot prediction  
+    23:20:41.568 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": null, "unlikely_threshold": null, "endpointing_delay": 0.3, "language": "en-IN", 
+"trigger": "stt", "from_cache": false}
+    23:20:41.771 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902641.455122, "last_final_transcript_time": 1786902641.4589198, 
+"speech_start_time": null, "delay_completed": true, "source": "stt", "end_of_turn_probability": null, "unlikely_threshold": null}
+    23:20:41.783 DEBUG    livekit.agents     using preemptive generation {"preemptive_lead_time": 0.32337284088134766}
+    23:20:41.794 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "More."}
+    23:20:44.534 DEBUG    livekit.agents     resumed false interrupted speech {"timeout": 2.0}
+    23:20:48.315 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "I'm sorry, I didn't quite catch that. Which date and time would youlike to book?"}
+    23:20:51.055 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "PM.", "language": "en-IN", "transcript_delay": 0.052118778228759766}
+    23:20:52.187 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Afternoon.", "language": "en-IN", "transcript_delay": 0.5021190643310547}
+    23:20:52.217 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.7972917556762695, "unlikely_threshold": 0.56, "endpointing_delay": 0.3, 
+"language": "en-IN", "trigger": "stt", "from_cache": false}
+    23:20:52.226 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902651.685062, "last_final_transcript_time": 1786902652.1948304, 
+"speech_start_time": 1786902641.9407089, "delay_completed": false, "source": "stt", "end_of_turn_probability": 0.7972917556762695, 
+"unlikely_threshold": 0.56}
+    23:20:52.246 DEBUG    livekit.agents     using preemptive generation {"preemptive_lead_time": 0.05159497261047363}
+    23:20:52.264 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "PM. Afternoon."}
+    23:20:58.614 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "I need a specific date and time to check the schedule. Could you 
+give me the date and the exact time you'd like to start?"}
+    23:21:02.358 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Of August.", "language": "en-IN", "transcript_delay": 0.4039340019226074}
+    23:21:02.472 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.3113565742969513, "unlikely_threshold": 0.56, "endpointing_delay": 2.5, 
+"language": "en-IN", "trigger": "stt", "from_cache": false}
+    23:21:04.451 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902661.954856, "last_final_transcript_time": 1786902662.3672116, 
+"speech_start_time": 1786902660.6389172, "delay_completed": true, "source": "stt", "end_of_turn_probability": 0.3113565742969513, 
+"unlikely_threshold": 0.56}
+    23:21:04.461 DEBUG    livekit.agents     using preemptive generation {"preemptive_lead_time": 2.0941991806030273}
+    23:21:04.469 DEBUG    livekit.agents     received user transcript {"user_transcript": "Two", "language": "en-IN"}
+    23:21:04.479 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "Of August."}
+    23:21:04.488 DEBUG    livekit.agents     stt transcript arrived after a turn flush, skipping eot prediction  
+    23:21:04.493 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": null, "unlikely_threshold": null, "endpointing_delay": 0.3, "language": "en-IN", 
+"trigger": "stt", "from_cache": false}
+    23:21:05.654 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.2488095462322235, "unlikely_threshold": 0.56, "endpointing_delay": 2.5, 
+"language": "en-IN", "trigger": "vad", "from_cache": false}
+    23:21:05.661 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "PM", "language": "en-IN", "transcript_delay": 0.6171605587005615}
+    23:21:05.692 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.2488095462322235, "unlikely_threshold": 0.56, "endpointing_delay": 2.5, 
+"language": "en-IN", "trigger": "stt", "from_cache": true}
+    23:21:07.550 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902665.0439866, "last_final_transcript_time": 1786902665.6696978, 
+"speech_start_time": 1786902664.487061, "delay_completed": true, "source": "stt", "end_of_turn_probability": 0.2488095462322235, 
+"unlikely_threshold": 0.56}
+    23:21:07.559 DEBUG    livekit.agents     using preemptive generation {"preemptive_lead_time": 1.8884127140045166}
+    23:21:07.565 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "Two PM"}
+    23:21:14.516 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "Which date in August were you thinking of?"}
+    23:21:17.096 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Twenty,", "language": "en-IN", "transcript_delay": 0.2911980152130127}
+    23:21:17.430 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.9160211086273193, "unlikely_threshold": 0.56, "endpointing_delay": 0.3, 
+"language": "en-IN", "trigger": "vad", "from_cache": false}
+    23:21:17.439 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902676.8834074, "last_final_transcript_time": 1786902677.1068301, 
+"speech_start_time": 1786902675.838969, "delay_completed": false, "source": "vad", "end_of_turn_probability": 0.9160211086273193, 
+"unlikely_threshold": 0.56}
+    23:21:17.450 DEBUG    livekit.agents     using preemptive generation {"preemptive_lead_time": 0.34235620498657227}
+    23:21:17.460 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "Twenty,"}
+    23:21:20.968 DEBUG    livekit.agents     flush audio emitter due to slow audio generation  
+    23:21:21.340 DEBUG    livekit.agents     flush audio emitter due to slow audio generation  
+    23:21:22.875 DEBUG    livekit.agents     flush audio emitter due to slow audio generation  
+    23:21:23.558 DEBUG    livekit.agents     flush audio emitter due to slow audio generation  
+    23:21:43.713 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "Got it, August 20th at 2 PM. Which station would you like: PC, PS5,Xbox, VR, or the Racing Simulator?"}
+    23:21:43.725 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Yes,", "language": "en-IN", "transcript_delay": 0.818812370300293}
+    23:21:43.739 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Yes, ma'am.", "language": "en-IN", "transcript_delay": 0.8331878185272217}
+    23:21:43.751 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.8537453413009644, "unlikely_threshold": 0.56, "endpointing_delay": 0.3, 
+"language": "en-IN", "trigger": "stt", "from_cache": true}
+    23:21:43.760 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902702.9064922, "last_final_transcript_time": 1786902703.7494485, 
+"speech_start_time": 1786902699.3443677, "delay_completed": false, "source": "stt", "end_of_turn_probability": 0.8537453413009644, 
+"unlikely_threshold": 0.56}
+    23:21:43.962 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "Yes, Yes, ma'am."}
+    23:21:45.880 DEBUG    livekit.agents     flush audio emitter due to slow audio generation  
+    23:21:52.113 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "I'm sorry, I just need you to pick one of the options. Would you 
+like a PC, PS5, Xbox, VR, or the Racing Simulator?"}
+    23:21:54.587 DEBUG    livekit.agents     received user transcript {"user_transcript": "Yes.", "language": "en-IN"}
+    23:21:54.595 DEBUG    livekit.agents     stt transcript arrived after a turn flush, skipping eot prediction  
+    23:21:54.604 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": null, "unlikely_threshold": null, "endpointing_delay": 0.3, "language": "en-IN", 
+"trigger": "stt", "from_cache": false}
+    23:21:54.900 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902714.5867107, "last_final_transcript_time": 1786902714.5923617, 
+"speech_start_time": null, "delay_completed": true, "source": "stt", "end_of_turn_probability": null, "unlikely_threshold": null}
+    23:21:54.910 DEBUG    livekit.agents     using preemptive generation {"preemptive_lead_time": 0.31746625900268555}
+    23:21:54.928 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "Yes."}
+    23:22:03.412 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "I can't book a \"yes,\" I need to know which specific station you 
+want. Do you want the PC, PS5, Xbox, VR, or the Racing Simulator?"}
+    23:22:08.957 DEBUG    livekit.agents     received user transcript {"user_transcript": "C.", "language": "en-IN"}
+    23:22:08.970 DEBUG    livekit.agents     stt transcript arrived after a turn flush, skipping eot prediction  
+    23:22:08.977 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": null, "unlikely_threshold": null, "endpointing_delay": 0.3, "language": "en-IN", 
+"trigger": "stt", "from_cache": false}
+    23:22:09.273 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902728.9579978, "last_final_transcript_time": 1786902728.9679961, 
+"speech_start_time": null, "delay_completed": true, "source": "stt", "end_of_turn_probability": null, "unlikely_threshold": null}
+    23:22:09.281 DEBUG    livekit.agents     using preemptive generation {"preemptive_lead_time": 0.3137228488922119}
+    23:22:09.287 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "C."}
+    23:22:10.455 DEBUG    livekit.agents     executing tool  
+                                         {"function": "check_availability", "arguments": "{\"date\": \"2026-08-20\", \"station_type\": 
+\"PC\", \"time\": \"14:00\"}", "speech_id": "speech_eea9d52716ee"}
+    23:22:10.467 DEBUG    livekit.agents     tools execution completed {"speech_id": "speech_eea9d52716ee"}
+    23:22:18.951 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "I'm sorry, the PC is fully booked for that time. Would you like to 
+try a different time, or maybe switch to a PS5, Xbox, VR, or the Racing Simulator?"}
+    23:22:27.670 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "It is", "language": "en-IN", "transcript_delay": 0.06807494163513184}
+    23:22:28.291 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.5257125496864319, "unlikely_threshold": 0.56, "endpointing_delay": 2.5, 
+"language": "en-IN", "trigger": "vad", "from_cache": false}
+    23:22:29.483 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.692661702632904, "unlikely_threshold": 0.56, "endpointing_delay": 0.3, 
+"language": "en-IN", "trigger": "vad", "from_cache": false}
+    23:22:29.491 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902749.0513117, "last_final_transcript_time": 1786902747.6781976, 
+"speech_start_time": 1786902740.1411564, "delay_completed": false, "source": "vad", "end_of_turn_probability": 0.692661702632904, 
+"unlikely_threshold": 0.56}
+    23:22:29.505 DEBUG    livekit.agents     using preemptive generation {"preemptive_lead_time": 1.8274283409118652}
+    23:22:29.527 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "It is"}
+    23:22:36.212 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "I'm not sure what you mean. Would you like to pick another time forthe PC, or maybe try one of our other stations?"}
+    23:22:39.680 WARNING  livekit.agents     turn detection transport latency is too high: 874ms  
+    23:22:39.687 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Racing simulator.", "language": "en-IN", "transcript_delay": 
+1.135378122329712}
+    23:22:39.728 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.8384407758712769, "unlikely_threshold": 0.56, "endpointing_delay": 0.3, 
+"language": "en-IN", "trigger": "stt", "from_cache": true}
+    23:22:39.740 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902758.5518775, "last_final_transcript_time": 1786902759.699314, 
+"speech_start_time": 1786902757.1327624, "delay_completed": false, "source": "stt", "end_of_turn_probability": 0.8384407758712769, 
+"unlikely_threshold": 0.56}
+    23:22:39.755 DEBUG    livekit.agents     using preemptive generation {"preemptive_lead_time": 0.05585932731628418}
+    23:22:39.779 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "Racing simulator."}
+    23:22:42.409 DEBUG    livekit.agents     executing tool  
+                                         {"function": "check_availability", "arguments": "{\"date\": \"2026-08-20\", \"station_type\": 
+\"Racing Simulator\", \"time\": \"14:00\"}", "speech_id": "speech_473d87e6ea4a"}
+    23:22:42.424 DEBUG    livekit.agents     tools execution completed {"speech_id": "speech_473d87e6ea4a"}
+    23:23:04.856 ERROR    livekit.agents     Error in _llm_inference_task  
+Traceback (most recent call last):
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\httpx\_transports\default.py", line 271, in __aiter__
+    async for part in self._httpcore_stream:
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\httpcore\_async\connection_pool.py", line 407, in __aiter__
+    raise exc from None
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\httpcore\_async\connection_pool.py", line 403, in __aiter__
+    async for part in self._stream:
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\httpcore\_async\http11.py", line 342, in __aiter__
+    raise exc
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\httpcore\_async\http11.py", line 334, in __aiter__
+    async for chunk in self._connection._receive_response_body(**kwargs):
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\httpcore\_async\http11.py", line 203, in _receive_response_body
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\httpcore\_async\http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\httpcore\_backends\anyio.py", line 32, in read
+    with map_exceptions(exc_map):
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\livekit\agents\inference\llm.py", line 464, in _run
+    async for chunk in stream:
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\openai\_streaming.py", line 158, in __aiter__
+    async for item in self._iterator:
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\openai\_streaming.py", line 172, in __stream__
+    async for sse in iterator:
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\openai\_streaming.py", line 162, in _iter_events
+    async for sse in self._decoder.aiter_bytes(self.response.aiter_bytes()):
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\openai\_streaming.py", line 319, in aiter_bytes
+    async for chunk in self._aiter_chunks(iterator):
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\openai\_streaming.py", line 330, in _aiter_chunks
+    async for chunk in iterator:
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\httpx\_models.py", line 997, in aiter_bytes
+    async for raw_bytes in self.aiter_raw():
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\httpx\_models.py", line 1055, in aiter_raw
+    async for raw_stream_bytes in self.stream:
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\httpx\_client.py", line 176, in __aiter__
+    async for chunk in self._stream:
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\httpx\_transports\default.py", line 270, in __aiter__
+    with map_httpcore_exceptions():
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout
+livekit.agents._exceptions.APITimeoutError: Request timed out.
+
+    23:23:04.973 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "The Racing Simulator is also booked up at 2 PM. How about we try a 
+different time, or would you like to check"}
+    23:23:04.982 ERROR    asyncio            Task exception was never retrieved                                                            
+                                             future: <Task finished name='Task-1109' coro=<_tts_inference_task() done, defined at          
+                                             C:\Users\vedik\AppData\Roaming\Python\Python311\site-packages\livekit\agents\utils\log.py:1…  
+                                             exception=APITimeoutError('Request timed out.', body=None, retryable=True)>                   
+livekit.agents._exceptions.APITimeoutError: Request timed out.
+
+    23:23:14.771 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Eight", "language": "en-IN", "transcript_delay": 9.489067316055298}
+    23:23:15.447 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "booking confirmed.", "language": "en-IN", "transcript_delay": 
+10.16512131690979}
+    23:23:15.957 WARNING  livekit.agents     turn detection transport latency is too high: 10420ms  
+    23:23:16.173 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.917944610118866, "unlikely_threshold": 0.56, "endpointing_delay": 0.3, 
+"language": "en-IN", "trigger": "stt", "from_cache": false}
+    23:23:16.183 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902785.28235, "last_final_transcript_time": 1786902795.455342, 
+"speech_start_time": 1786902785.4253721, "delay_completed": false, "source": "stt", "end_of_turn_probability": 0.917944610118866, 
+"unlikely_threshold": 0.56}
+    23:23:16.235 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "Eight booking confirmed."}
+    23:23:23.131 DEBUG    livekit.agents     flush audio emitter due to slow audio generation  
+    23:23:39.713 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "I can't confirm the booking just yet because the Racing Simulator 
+was full at 2 PM. Did you mean you'd like to change the time to 8 PM instead?"}
+    23:23:40.848 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Okay.", "language": "en-IN", "transcript_delay": 0.04221010208129883}
+    23:23:41.769 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "Okay. Sure.", "language": "en-IN", "transcript_delay": 0.5186371803283691}
+    23:23:41.876 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.597871720790863, "unlikely_threshold": 0.56, "endpointing_delay": 0.3, 
+"language": "en-IN", "trigger": "stt", "from_cache": false}
+    23:23:41.883 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902821.250958, "last_final_transcript_time": 1786902821.7770002, 
+"speech_start_time": 1786902820.7412336, "delay_completed": false, "source": "stt", "end_of_turn_probability": 0.597871720790863, 
+"unlikely_threshold": 0.56}
+    23:23:41.898 DEBUG    livekit.agents     using preemptive generation {"preemptive_lead_time": 0.1201181411743164}
+    23:23:41.917 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "Okay. Okay. Sure."}
+    23:23:43.215 DEBUG    livekit.agents     executing tool  
+                                         {"function": "check_availability", "arguments": "{\"date\": \"2026-08-20\", \"station_type\": 
+\"Racing Simulator\", \"time\": \"20:00\"}", "speech_id": "speech_7664380c7c80"}
+    23:23:43.329 DEBUG    livekit.agents     tools execution completed {"speech_id": "speech_7664380c7c80"}
+    23:24:00.347 DEBUG    livekit.agents     interruption detected  
+                                         {"total_duration": 0.1337315, "prediction_duration": 0.039175314, "detection_delay": 
+0.0856633186340332, "probability": 0.8022570610046387}
+    23:24:00.458 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "No.", "language": "en-IN", "transcript_delay": 0.0499112606048584}
+    23:24:00.481 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "That's also fully booked. Would you like to try another time, or 
+maybe switch to a PS5, Xbox, or VR?"}
+    23:24:01.159 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "I am not.", "language": "en-IN", "transcript_delay": 0.3178439140319824}
+    23:24:01.371 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.6135879755020142, "unlikely_threshold": 0.56, "endpointing_delay": 0.3, 
+"language": "en-IN", "trigger": "stt", "from_cache": false}
+    23:24:01.381 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902840.8419707, "last_final_transcript_time": 1786902841.1679785, 
+"speech_start_time": 1786902839.8396313, "delay_completed": false, "source": "stt", "end_of_turn_probability": 0.6135879755020142, 
+"unlikely_threshold": 0.56}
+    23:24:01.393 DEBUG    livekit.agents     using preemptive generation {"preemptive_lead_time": 0.22503900527954102}
+    23:24:01.416 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "No. I am not."}
+    23:24:03.112 DEBUG    livekit.agents     received user transcript  
+                                         {"user_transcript": "I'm not interested.", "language": "en-IN", "transcript_delay": 
+1.0641369819641113}
+    23:24:03.121 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": 0.09100192785263062, "unlikely_threshold": 0.56, "endpointing_delay": 2.5, 
+"language": "en-IN", "trigger": "stt", "from_cache": true}
+    23:24:04.532 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902842.0483773, "last_final_transcript_time": 1786902843.1190429, 
+"speech_start_time": 1786902841.5510716, "delay_completed": true, "source": "stt", "end_of_turn_probability": 0.09100192785263062, 
+"unlikely_threshold": 0.56}
+    23:24:04.580 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "I'm not interested."}
+    23:24:11.914 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "I understand. Sorry we couldn't find a spot for you today. Have a 
+great day!"}
+    23:24:15.305 DEBUG    livekit.agents     received user transcript {"user_transcript": "Bye.", "language": "en-IN"}
+    23:24:15.315 DEBUG    livekit.agents     stt transcript arrived after a turn flush, skipping eot prediction  
+    23:24:15.327 DEBUG    livekit.agents     eot prediction  
+                                         {"probability": null, "unlikely_threshold": null, "endpointing_delay": 0.3, "language": "en-IN", 
+"trigger": "stt", "from_cache": false}
+    23:24:15.594 DEBUG    livekit.agents     user turn committed  
+                                         {"last_speaking_time": 1786902855.30573, "last_final_transcript_time": 1786902855.3110769, 
+"speech_start_time": null, "delay_completed": true, "source": "stt", "end_of_turn_probability": null, "unlikely_threshold": null}
+    23:24:15.605 DEBUG    livekit.agents     using preemptive generation {"preemptive_lead_time": 0.2935454845428467}
+    23:24:15.630 DEBUG    livekit.agents     conversation_item_added {"role": "user", "text": "Bye."}
+    23:24:19.712 DEBUG    livekit.agents     conversation_item_added  
+                                         {"role": "assistant", "text": "Bye! Feel free to call back if you change your mind."}
+   Microphone (High Definition Aud        ▃ ▃ ▄ ▂ ▅ ▅ ▂ ▁ ▁ ▁ ▁ ▁ ▁ ▁         turn_completed_cb: 0.01ms · llm_ttft: 845ms · tts_ttfb: 596ms                                                                  
