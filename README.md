@@ -1,4 +1,4 @@
-# Agent Switching with LiveKit
+# Agent Transfer with LiveKit
 
 Previously I worked with LiveKit to build a voice AI agent, but had only one agent handling everything from greeting to booking. This isn't the most optimal approach. To learn how complex AI workflows are built in real industry agents, **agent switching** is used.
 
