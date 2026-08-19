@@ -1,8 +1,8 @@
 """
-SIMPLE AGENT SWITCHING DEMO — LiveKit Agents
+Simple Agent Transer Demo with livekit 
 Two agents:
   1. ReceptionistAgent — greets caller, answers basic FAQs, listens for booking intent
-  2. BookingAgent       — takes over once caller wants to book, collects details, "confirms" a booking
+  2. BookingAgent       — takes over once caller wants to book, collects details, confirms a booking
 """
 
 import random
@@ -22,14 +22,12 @@ from livekit.agents import (
 
 load_dotenv(".env.local")
 
-
 # AGENT 1: Receptionist
-
 class ReceptionistAgent(Agent):
     """
     Handles general conversation and FAQs. The moment the caller shows
     intent to book, it calls `transfer_to_booking`, which hands control
-    over to BookingAgent. This is the core "agent switching" mechanism —
+    over to BookingAgent. This is the core "agent transfer" mechanism
     a function tool that RETURNS a different Agent instance.
     """
 
@@ -42,20 +40,19 @@ You can answer general questions:
 - Pricing: 200 rupees per hour per station
 - Stations available: PC, PS5, Xbox, VR, Racing Simulator
 
-Keep answers short — one to three sentences, plain spoken language, no lists
+Keep answers short one to three sentences, plain spoken language, no lists
 or markdown, since this is a voice conversation.
 
 If the caller wants to book a slot, or clearly wants to make a reservation,
 call the transfer_to_booking tool right away. Do not try to collect booking
-details yourself — that is the booking agent's job."""
+details yourself that is the booking agent's job."""
         )
 
     async def on_enter(self):
         await self.session.generate_reply(
             instructions=(
                 "Greet the caller warmly. Mention you can answer questions about "
-                "the gaming zone or help them book a session. End by asking what "
-                "they'd like to do."
+                "the gaming zone or help them book a session. End by asking what they'd like to do."
             )
         )
 
@@ -65,9 +62,7 @@ details yourself — that is the booking agent's job."""
         clearly expresses intent to make a reservation."""
         return BookingAgent()
 
-
 # AGENT 2: Booking specialist
-
 class BookingAgent(Agent):
     """
     Takes over once the caller wants to book. Collects details through
@@ -91,14 +86,14 @@ Once you have date, time, and station, call check_availability before
 confirming anything. Only call create_booking after the caller has
 explicitly confirmed the details out loud.
 
-Keep replies short and conversational — one to three sentences, plain
+Keep replies short and conversational one to three sentences, plain
 spoken language, no lists or markdown."""
         )
 
     async def on_enter(self):
         await self.session.generate_reply(
             instructions=(
-                "Continue the conversation naturally — ask for the first "
+                "Continue the conversation naturally ask for the first "
                 "piece of booking information (their name)."
             )
         )
@@ -147,9 +142,8 @@ spoken language, no lists or markdown."""
         )
 
 
-# Entry point — the call ALWAYS starts with ReceptionistAgent
+# Entry point — the call always starts with ReceptionistAgent
 server = AgentServer()
-
 
 @server.rtc_session(agent_name="gaming-zone-simple")
 async def entrypoint(ctx: JobContext):
